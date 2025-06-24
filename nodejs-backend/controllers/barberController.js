@@ -4,7 +4,6 @@ const Barber = require('../models/barberModel');
 exports.getAllBarbers = async (req, res) => {
   try {
     const barbers = await Barber.find()
-      .populate('barberShop')
       .populate('services')
       .exec();
 
@@ -49,7 +48,6 @@ exports.createBarber = async (req, res) => {
 exports.getBarberById = async (req, res) => {
   try {
     const barber = await Barber.findById(req.params.id)
-      .populate('barberShop')
       .populate('services');
 
     if (!barber) {

@@ -21,7 +21,7 @@ const barberSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  barberShop: {
+  barberShopId: {
     type: mongoose.Schema.Types.ObjectId, // Barbershop ile ilişki
     ref: 'BarberShop',
     required: true,
